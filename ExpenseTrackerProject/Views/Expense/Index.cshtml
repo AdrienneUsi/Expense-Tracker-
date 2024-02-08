@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Expense>
+
+
+<h2>Expenses</h2>
+
+<table class="table">
+    <tr>
+        <th>Expense ID</th>
+        <th>Category Name</th>
+        <th>Amount</th>
+        <th>Date of Expense</th>
+        <th>Description</th>
+        <th>Payment Method</th>
+    </tr>
+
+    @foreach (var expense in @Model)
+    {
+        <tr>
+            <td><a href=/Expense/ViewExpense/@expense.Expense_ID>@expense.Expense_ID</a></td>
+            <td>@expense.Category_name</td>
+            <td>@expense.Amount</td>
+            <td>@expense.Date_Of_Expense.ToString("MM/d/yy")</td>
+            <td>@expense.Description</td>
+            <td>@expense.Payment_Method</td>
+        </tr>
+    }
+</table>
+<div style="display: block">
+    <a href="/Expense/InsertExpense/">Create a New Expense</a>
+</div>
+
+

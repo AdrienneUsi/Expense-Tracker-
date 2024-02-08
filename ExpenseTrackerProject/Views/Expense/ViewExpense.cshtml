@@ -1,0 +1,27 @@
+﻿@model Expense
+
+<h3>@Model.Expense_ID</h3>
+.
+<table class="table">
+    <tr>
+        <th>Expense ID</th>
+        <th>Category Name</th>
+        <th>Amount</th>
+        <th>Date of Expense</th>
+        <th>Description</th>
+        <th>Payment Method</th>
+    </tr>
+    <tr>
+        <td>@Model.Expense_ID</td>
+        <td>@Model.Category_name</td>
+        <td>@Model.Amount</td>
+        <td>@Model.Date_Of_Expense.ToString("MM/d/yy")</td>
+        <td>@Model.Description</td>
+        <td>@Model.Payment_Method</td>
+    </tr>
+</table>
+
+<div style="display: block">
+    <a href="/Expense/UpdateExpense/@Model.Expense_ID">Update this Expense</a>
+</div>
+
