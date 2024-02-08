@@ -62,6 +62,12 @@ namespace ExpenseTrackerProject.Controllers
             _data.InsertExpense(expenseToInsert);
             return RedirectToAction("Index");
         }
+
+        public IActionResult DeleteExpense(Expense expense)
+        {
+            _data.DeleteExpense(expense);
+            return RedirectToAction("Index");
+        }
     }
 
 

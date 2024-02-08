@@ -25,3 +25,11 @@
     <a href="/Expense/UpdateExpense/@Model.Expense_ID">Update this Expense</a>
 </div>
 
+<div style="display: block">
+
+    @using (Html.BeginForm("DeleteExpense", "Expense", "Post"))
+    {
+        <input type="hidden" asp-for="Expense_ID" value="@Model.Expense_ID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this Expense" />
+    }
+</div>

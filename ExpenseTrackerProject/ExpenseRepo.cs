@@ -27,23 +27,22 @@ namespace ExpenseTrackerProject
 
         public void UpdateExpense(Expense expense)
         {
-            _conn.Execute("UPDATE expenses SET category_name = @Category_name, amount = @Amount WHERE expense_id = @id",
-             new { category_name = expense.Category_name, amount = expense.Amount, id = expense.Expense_ID });
+            _conn.Execute("UPDATE expenses SET category_name = @category_name, amount = @amount WHERE expense_id = @expense_id",
+             new { category_name = expense.Category_name, amount = expense.Amount, expense_id = expense.Expense_ID });
         }
 
         public void InsertExpense(Expense expenseToInsert)
         {
-            _conn.Execute("INSERT INTO expenses (category, amount, expense_id) VALUES (@category, @amount, @expense_id);",
-                new { Category = expenseToInsert.Category_name, Amount = expenseToInsert.Amount, Expense_id = expenseToInsert.Expense_ID });
+            _conn.Execute("INSERT INTO expenses (category_name, amount, expense_id) VALUES (@category, @amount, @expense_id);",
+                new { category = expenseToInsert.Category_name, amount = expenseToInsert.Amount, expense_id = expenseToInsert.Expense_ID });
 
 
         }
 
         public void DeleteExpense(Expense expense)
         {
-            _conn.Execute("DELETE FROM REVIEWS WHERE Expense_ID = @id;", new { id = expense. Expense_ID });
-            _conn.Execute("DELETE FROM Amount WHERE Expense_ID = @id;", new { id = expense.Expense_ID });
-            _conn.Execute("DELETE FROM Expense WHERE Expense_ID = @id;", new { id = expense.Expense_ID});
+           
+            _conn.Execute("DELETE FROM expenses WHERE expense_id = @id;", new { id = expense.Expense_ID});
         }
     }
 
