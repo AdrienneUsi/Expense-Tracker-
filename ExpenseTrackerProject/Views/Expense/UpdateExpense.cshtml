@@ -3,7 +3,7 @@
 <h2>Update @Model.Expense_ID</h2>
 
 @using (Html.BeginForm("UpdateExpenseToDatabase", "Expense", "Post"))
-    {
+{
     <input asp-for="Expense_ID" type="hidden" value="@Model.Expense_ID" />
 
     <label asp-for="Category_name" class="control-label">Name</label>
@@ -12,6 +12,15 @@
     <label asp-for="Amount" class="control-label">Amount</label>
     <input type="number" step="0.01" name="Amount" class="form-control" value="@Model.Amount" />
 
+    <label asp-for="Date_Of_Expense" class="control-label">Date Of Expense</label>
+    <input type="date" step="0.01" name="Date_Of_Expense" class="form-control" value="@Model.Date_Of_Expense" />
+
+    <label asp-for="Description" class="control-label">Description</label>
+    <input type="text"  name="Description" class="form-control" value="@Model.Description" />
+
+    <label asp-for="Payment_Method" class="control-label">Payment Method</label>
+    <input type="text"  name="Payment_Method" class="form-control" value="@Model.Payment_Method" />
+
     <input type="submit" value="Update Expense" class="btn btn-primary" />
 
-    }
+}

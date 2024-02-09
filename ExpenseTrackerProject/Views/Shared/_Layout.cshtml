@@ -4,9 +4,52 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ExpenseTrackerProject</title>
+    <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Link to your custom stylesheets -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ExpenseTrackerProject.styles.css" asp-append-version="true" />
+    <style>
+        /* Additional custom styles */
+        body {
+            background-color: #f0f8ff; /* Light blue background */
+            color: #333; /* Dark text color */
+            font-family: Arial, sans-serif; /* Choose appropriate font */
+        }
+
+        /* Header styling */
+        header {
+            background-color: #007bff; /* Vibrant blue header */
+            color: #fff; /* White text color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Button styling */
+        .btn-custom {
+            background-color: #89cff0; /* Baby blue button color */
+            color: #fff; /* White text color */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            /* Button hover effect */
+            .btn-custom:hover {
+                background-color: #6eb8da; /* Darker shade on hover */
+            }
+
+        /* Example of text styling */
+        h1, h2, h3 {
+            color: #007bff; /* Blue headings */
+        }
+
+        p {
+            line-height: 1.5; /* Improved readability with proper line spacing */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,7 +67,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Expense" asp-action="Index">Expenses</a>
-                     
+
                         </li>
                     </ul>
                 </div>
@@ -42,10 +85,10 @@
             &copy; 2024 - ExpenseTrackerProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+    <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-
